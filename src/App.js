@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import logo from './Beholi.jpeg';
 import './Beholi.jpeg';
 
 function App() {
