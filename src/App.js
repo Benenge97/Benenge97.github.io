@@ -1,5 +1,5 @@
 import logo from './Beholi.jpeg';
-import './Beholi.jpeg';
+import './logo.svg';
 
 function App() {
   return (
