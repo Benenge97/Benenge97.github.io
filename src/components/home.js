@@ -1,8 +1,7 @@
 import React from "react";
-import App from "../App";
-import image from "./images/Beholi.jpeg";
+import image from "./Beholi.jpeg";
 
-function Home() {
+export default function Home() {
     return (
     <main>
       <h1>Welcome!</h1>
@@ -13,5 +12,3 @@ function Home() {
       </main>
     );
   }
-
-  export default App;

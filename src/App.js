@@ -3,39 +3,35 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  useParams,
+  useRouteMatch
 } from "react-router-dom";
-import Home from "./components/home";
-import Contact from "./components/contact";
-import About from "./components/About";
 import Projects from "./components/projects";
+import Home from "./components/home";
+import About from "./components/about";
+import Contact from "./components/contact";
 import Nav from "./components/nav";
-import image from "./Beholi.jpeg";
+
 
 function App() {
   return (
-    <div className= "container">
     <Router>
       <Nav />
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
           <Route component= {About} path="/about">
-            <About />
           </Route>
           <Route component= {Contact} path="/contact">
-            <Contact />
           </Route>
-          <Route component= {Home} path="/" exact>
-            <Home />
+          <Route component= {Home} path="/">
           </Route>
-          <Route component= {Projects} path="/projects">
-            <Projects />
+          <Route component= {Projects} path="/Projects">
           </Route>
         </Switch>
     </Router>
-    </div>
-  );
+  )
 }
 
 export default App;
