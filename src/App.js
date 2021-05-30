@@ -1,71 +1,41 @@
 import React from "react";
-import image from "./Beholi.jpeg";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom";
+import Home from "./components/home";
+import Contact from "./components/contact";
+import About from "./components/About";
+import Projects from "./components/projects";
+import Nav from "./components/nav";
+import image from "./Beholi.jpeg";
 
-export default function App() {
+function App() {
   return (
+    <div className= "container">
     <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/contact">Contact</Link>
-            </li>
-            <li>
-              <Link to="/projects">Projects</Link>
-            </li>
-          </ul>
-        </nav>
-
+      <Nav />
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/about">
+          <Route component= {About} path="/about">
             <About />
           </Route>
-          <Route path="/contact">
+          <Route component= {Contact} path="/contact">
             <Contact />
           </Route>
-          <Route path="/">
+          <Route component= {Home} path="/" exact>
             <Home />
           </Route>
-          <Route path="/projects">
+          <Route component= {Projects} path="/projects">
             <Projects />
           </Route>
         </Switch>
-      </div>
     </Router>
+    </div>
   );
 }
 
-function Home() {
-  return (
-  <main>
-    <h2>Welcome!</h2>;
-    <img src={image} className= "self portrait" alt= "portrait" />
-    </main>
-  );
-}
-
-function About() {
-  return <h2>About me</h2>;
-}
-
-function Contact() {
-  return <h2>Contact me</h2>;
-}
-
-function Projects() {
-  return <h2>Some art works</h2>
-}
+export default App;
